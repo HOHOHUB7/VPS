@@ -102,9 +102,9 @@ getgenv().LoadSettings = {
         ["Pets"] = true,
         ["Drops"] = true,
         ["Breakables"] = true,
-        ["Scripts"] = false,
-        ["GUIs"] = false,
-        ["World"] = false
+        ["Scripts"] = true,
+        ["GUIs"] = true,
+        ["World"] = true
     }
 }
 
