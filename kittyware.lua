@@ -51,7 +51,7 @@ getgenv().LoadSettings = {
         },
         ["Index"] = true,
         ["Upgrades"] = true,
-        ["RAPToMail"] = 1400,
+        ["RAPToMail"] = 300,
         ["Rarities"] = {"Exclusive", "Mythical", "Exotic", "Celestial", "Legendary"},
         ["IndexWebhook"] = "Enter your Discord Webhook",
         ["MailWebhook"] = "https://discord.com/api/webhooks/1295925995349741640/01CtOkUpdRymNQTEZKKhZNFu3iiiIK60EVJkPG_FTWR_INbE5GvVXFmnMUwh9n-I_-9s",
