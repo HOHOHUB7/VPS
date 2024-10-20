@@ -33,11 +33,11 @@ getgenv().Settings = {
         Active = true,
         Items = {
             --// Example Settings, everything is editable.
-            ["All Rarity: Superior"] = {Class = "Pet", Price = "0%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "0%"}, --// 20% above or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "0%"}, --// 20% below or less of RAP.
+            ["All Rarity: Superior"] = {Class = "Pet", Price = "-5%"}, --// Normal RAP.
+            ["All Rarity: Exotic"] = {Class = "Pet", Price = "-5%"}, --// 20% above or less of RAP.
+            ["All Rarity: Mythical"] = {Class = "Pet", Price = "-5%"}, --// 20% below or less of RAP.
             ["RAP Above: 15m"] = {Class = "Pet", Price = -5000}, --// 5k off of RAP & RAP Above 15m.
-            ["Difficulty Above: 5m"] = {Class = "Pet", Price = "10%"}, --// 10% above or less of RAP & Difficulty Above 5m.
+            ["Difficulty Above: 5m"] = {Class = "Pet", Price = "-5%"}, --// 10% above or less of RAP & Difficulty Above 5m.
         },
         Serverhop = {
             ["Switch Servers"] = true,
