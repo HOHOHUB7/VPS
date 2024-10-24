@@ -5,8 +5,8 @@ getgenv().Settings = {
         Items = {
             --// Example Settings, everything is editable.
             ["All Rarity: Legendary"] = {Class = "Pet", Price = "0%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "0%"}, --// 20% below or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "0%"}, --// 20% above or less of RAP.
+            ["All Rarity: Exotic"] = {Class = "Pet", Price = "20%"}, --// 20% below or less of RAP.
+            ["All Rarity: Mythical"] = {Class = "Pet", Price = "+20%"}, --// 20% above or less of RAP.
             ["RAP Above: 500k"] = {Class = "Pet", Price = "15%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
             ["Difficulty Above: 5m"] = {Class = "Pet", Price = "+50%", UseCosmicValues = true}, --// 50% above Cosmic Value price & Difficulty Above 5m
             ["Kitsune Fox"] = {Class = "Pet", Price = 15000, InventoryLimit = 52}, --// Normal Listing Price.
@@ -17,7 +17,7 @@ getgenv().Settings = {
             ["Save # Last Joined Servers"] = 10,
         },
         Webhook = {
-            ["URL"] = "https://discord.com/api/webhooks/1296593849296097372/i8wrmMNLTGmMBJT1_DszJa72x3WzMKn86Ni32AcjcoJrGhoGt54tZ9o9pPWc0lTjeO2w",
+            ["URL"] = "",
             ["Send Embeds"] = true,
             ["Remove Username"] = true,
             ["Global Snipes"] = true,
@@ -33,11 +33,12 @@ getgenv().Settings = {
         Active = true,
         Items = {
             --// Example Settings, everything is editable.
-            ["All Rarity: Superior"] = {Class = "Pet", Price = "-5%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "-5%"}, --// 20% above or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "-5%"}, --// 20% below or less of RAP.
+            ["All Rarity: Superior"] = {Class = "Pet", Price = "0%"}, --// Normal RAP.
+            ["All Rarity: Exotic"] = {Class = "Pet", Price = 0%"}, --// 20% above or less of RAP.
+            ["All Rarity: Mythical"] = {Class = "Pet", Price = "0%"}, --// 20% below or less of RAP.
             ["RAP Above: 15m"] = {Class = "Pet", Price = -5000}, --// 5k off of RAP & RAP Above 15m.
-            ["Difficulty Above: 5m"] = {Class = "Pet", Price = "-5%"}, --// 10% above or less of RAP & Difficulty Above 5m.
+            ["Difficulty Above: 5m"] = {Class = "Pet", Price = "0%"}, --// 10% above or less of RAP & Difficulty Above 5m.
+            ["Kitsune Fox"] = {Class = "Pet", Price = 15000, Amount = 2}, --// Normal Listing Price.
         },
         Serverhop = {
             ["Switch Servers"] = true,
@@ -46,7 +47,7 @@ getgenv().Settings = {
         Webhook = {
             ["URL"] = "https://discord.com/api/webhooks/1296593849296097372/i8wrmMNLTGmMBJT1_DszJa72x3WzMKn86Ni32AcjcoJrGhoGt54tZ9o9pPWc0lTjeO2w",
             ["Send Embeds"] = true,
-            ["Remove Username"] = true,
+            ["Remove Username"] = false,
         },
         StopParams = {
             ["Item Runout"] = false,
@@ -56,7 +57,7 @@ getgenv().Settings = {
         },
         Other = {
             ["Auto Accept Mail"] = true,
-            ["Diamonds Hit: 200k Sendout"] = "FASTZIN_STORE",
+            ["Diamonds Hit: 1b Sendout"] = "FASTZIN_STORE",
             ["Always Try Adding Listings"] = true,
             ["Never Join Friendslist"] = false,
         },
