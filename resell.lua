@@ -1,4 +1,4 @@
-script_key = "KEY HERE"
+script_key = "lUiDdEVtbtUkyFZZApVwpeUoPMXXxeFY"
 getgenv().Settings = {
     Sniper = {
         Active = true,
