@@ -29,7 +29,7 @@ getgenv().Settings = {
         },
     },
     Seller = {
-        Active = true,
+        Active = false,
         Items = {
             --// Example Settings, everything is editable.
             ["All Rarity: Superior"] = {Class = "Pet", Price = "-5%"}, --// Normal RAP.
