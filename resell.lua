@@ -12,7 +12,7 @@ getgenv().Settings = {
         },
         Serverhop = {
             ["Switch Servers"] = true,
-            ["Teleport Delay (s)"] = 3,
+            ["Teleport Delay (s)"] = 10,
             ["Save # Last Joined Servers"] = 10,
         },
         Webhook = {
