@@ -51,7 +51,7 @@ getgenv().Settings = {
             ["Item Runout"] = false,
             ["Diamonds Hit: 1b"] = false,
             ["60 Minutes"] = false,
-            ["Switch To Sniping"] = true,
+            ["Switch To Sniping"] = false,
         },
         Other = {
             ["Auto Accept Mail"] = true,
