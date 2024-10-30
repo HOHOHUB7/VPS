@@ -56,7 +56,7 @@ getgenv().Settings = {
         },
         Other = {
             ["Auto Accept Mail"] = true,
-            ["Diamonds Hit: 200k Sendout"] = "FASTZIN_STORE",
+            ["Diamonds Hit: 1b Sendout"] = "FASTZIN_STORE",
             ["Always Try Adding Listings"] = true,
             ["Never Join Friendslist"] = false,
         },
