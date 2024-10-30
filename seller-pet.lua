@@ -55,7 +55,7 @@ getgenv().Settings = {
             ["Switch To Sniping"] = false,
         },
         Other = {
-            ["Auto Accept Mail"] = true,
+            ["Auto Accept Mail"] = false,
             ["Diamonds Hit: 1b Sendout"] = "FASTZIN_STORE",
             ["Always Try Adding Listings"] = true,
             ["Never Join Friendslist"] = false,
