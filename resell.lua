@@ -25,7 +25,7 @@ getgenv().Settings = {
             ["Limits Reached"] = false,
             ["Diamonds Hit: 250k"] = false,
             ["60 Minutes"] = false,
-            ["Switch To Selling"] = true,
+            ["Switch To Selling"] = false,
         },
     },
     Seller = {
