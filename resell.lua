@@ -7,8 +7,8 @@ getgenv().Settings = {
             ["All Rarity: Legendary"] = {Class = "Pet", Price = "20%"}, --// Normal RAP.
             ["All Rarity: Exotic"] = {Class = "Pet", Price = "25%"}, --// 20% below or less of RAP.
             ["All Rarity: Mythical"] = {Class = "Pet", Price = "30%"}, --// 20% above or less of RAP.
-            ["RAP Above: 500k"] = {Class = "Pet", Price = "20%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
-
+            ["RAP Above: 1M"] = {Class = "Pet", Price = "20%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
+["RAP below: 1M"] = {Class = "Pet", Price = "101%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
         },
         Serverhop = {
             ["Switch Servers"] = true,
