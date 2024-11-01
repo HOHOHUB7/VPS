@@ -1,7 +1,7 @@
 script_key = "lUiDdEVtbtUkyFZZApVwpeUoPMXXxeFY"
 getgenv().Settings = {
     Sniper = {
-        Active = true,
+        Active = false,
         Items = {
             --// Example Settings, everything is editable.
             ["All Rarity: Legendary"] = {Class = "Pet", Price = "20%"}, --// Normal RAP.
@@ -29,7 +29,7 @@ getgenv().Settings = {
         },
     },
     Seller = {
-        Active = false,
+        Active = true,
         Items = {
             --// Example Settings, everything is editable.
             ["All Rarity: Superior"] = {Class = "Pet", Price = "-5%"}, --// Normal RAP.
