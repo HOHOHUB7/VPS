@@ -4,9 +4,9 @@ getgenv().Settings = {
         Active = false,
         Items = {
             --// Example Settings, everything is editable.
-            ["All Rarity: Legendary"] = {Class = "Pet", Price = "0%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "0%"}, --// 20% below or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "0%"}, --// 20% above or less of RAP.
+            ["All Rarity: Legendary"] = {Class = "Pet", Price = "10%"}, --// Normal RAP.
+            ["All Rarity: Exotic"] = {Class = "Pet", Price = "10%"}, --// 20% below or less of RAP.
+            ["All Rarity: Mythical"] = {Class = "Pet", Price = "10%"}, --// 20% above or less of RAP.
             ["RAP Above: 500k"] = {Class = "Pet", Price = "15%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
             ["Difficulty Above: 5m"] = {Class = "Pet", Price = "+50%", UseCosmicValues = true}, --// 50% above Cosmic Value price & Difficulty Above 5m
             ["Kitsune Fox"] = {Class = "Pet", Price = 15000, InventoryLimit = 52}, --// Normal Listing Price.
