@@ -3,7 +3,7 @@ game:Shutdown()  -- Fecha o jogo, simulando uma "expulsão"
 
 
 
-script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
+script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV i";
 
 getgenv().petsGoConfig = {
 EVENT_EGG = true,
