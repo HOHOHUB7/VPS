@@ -4,10 +4,10 @@ getgenv().Settings = {
         Active = false,
         Items = {
             --// Example Settings, everything is editable.
-            ["All Rarity: Legendary"] = {Class = "Pet", Price = "10%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "10%"}, --// 20% below or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "10%"}, --// 20% above or less of RAP.
-            ["RAP Above: 500k"] = {Class = "Pet", Price = "15%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
+            ["All Rarity: Legendary"] = {Class = "Pet", Price = "0%"}, --// Normal RAP.
+            ["All Rarity: Exotic"] = {Class = "Pet", Price = "0%"}, --// 20% below or less of RAP.
+            ["All Rarity: Mythical"] = {Class = "Pet", Price = "0%"}, --// 20% above or less of RAP.
+            ["RAP Above: 500k"] = {Class = "Pet", Price = "0%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
             ["Difficulty Above: 5m"] = {Class = "Pet", Price = "+50%", UseCosmicValues = true}, --// 50% above Cosmic Value price & Difficulty Above 5m
             ["Kitsune Fox"] = {Class = "Pet", Price = 15000, InventoryLimit = 52}, --// Normal Listing Price.
         },
@@ -17,10 +17,10 @@ getgenv().Settings = {
             ["Save # Last Joined Servers"] = 10,
         },
         Webhook = {
-            ["URL"] = "https://discord.com/api/webhooks/1296593849296097372/i8wrmMNLTGmMBJT1_DszJa72x3WzMKn86Ni32AcjcoJrGhoGt54tZ9o9pPWc0lTjeO2w",
+            ["URL"] = "https://discord.com/api/webhooks/1303564260559028335/KcTTKSuskR-VZpeMsdLj6OQMYulEgMZIEwlICkO7GuC3xUS6fxX_BytBncskCausWYtO",
             ["Send Embeds"] = true,
-            ["Remove Username"] = true,
-            ["Global Snipes"] = true,
+            ["Remove Username"] = false,
+            ["Global Snipes"] = false,
         },
         StopParams = {
             ["Limits Reached"] = false,
@@ -44,9 +44,9 @@ getgenv().Settings = {
             ["Teleport Delay (m)"] = 15,
         },
         Webhook = {
-            ["URL"] = "https://discord.com/api/webhooks/1296593849296097372/i8wrmMNLTGmMBJT1_DszJa72x3WzMKn86Ni32AcjcoJrGhoGt54tZ9o9pPWc0lTjeO2w",
+            ["URL"] = "https://discord.com/api/webhooks/1303564260559028335/KcTTKSuskR-VZpeMsdLj6OQMYulEgMZIEwlICkO7GuC3xUS6fxX_BytBncskCausWYtO",
             ["Send Embeds"] = true,
-            ["Remove Username"] = true,
+            ["Remove Username"] = false,
         },
         StopParams = {
             ["Item Runout"] = false,
