@@ -1,9 +1,7 @@
--- Script no LocalScript (lado do cliente)
-game:Shutdown()  -- Fecha o jogo, simulando uma "expulsão"
 
 
 
-script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV i";
+script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
 
 getgenv().petsGoConfig = {
 EVENT_EGG = true,
