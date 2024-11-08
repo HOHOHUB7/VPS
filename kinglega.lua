@@ -1,39 +1,92 @@
-getgenv().Script_Mode = "Kaitun_Script"
-_G.Settings_Farm = {
-    ["Start_Farm"] = true,
-    ["Enabled_HOP"] = true,
-    ["Fruits_List"] = {
-        'RumbleRumble',
-        'FlameFlame',
-        'MagmaMagma',
-        'LightLight',
-        'GasGas',
-        'IceIce',
-        'SnowSnow',
-        'QuakeQuake',
-        'SpiritSpirit',
-        'PhoenixPhoenix',
-        'DoughDough',
-        'DragonDragon'
-    },
-    ["Enabled_Invisible"] = true,
-    ["Enabled_FastFarm"] = true,
-    ["Amount_FPS"] = 30,
-    ["LOCK_FPS"] = false,
-    ["WhiteScreen"] = false,
-    ["Disabled_Gui"] = false,
-}
-_G.Quests_Settings = {
-     ["V2Observation"] = false,
-     ["V2Aramament"] = false,
-     ["V2DarkLeg"] = false,
-     ["FarmRaid"] = false
-}
--- Script Here!!
+local start = tick()
+repeat task.wait() until game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("DataLoaded") and game.Players.LocalPlayer:FindFirstChild("DataLoaded").Value
 
+getgenv().Key = "2f7ba99a895809cf612043f5"
 
+if not _G.Config then
+    local k = {
+        Enabled = true, --> true: enable or false: disable the script
+        Events = {
+            SwordChanged = nil,
+            FightingStyleChanged = nil,
+            EnemiesAdded = nil,
+            EnemiesRemoved = nil,
+            FlingPrevent = nil,
+            WindowFocusReleased = nil,
+            WindowFocused = nil,
+            RaceChanged = nil,
+            TimeElapsed = nil,
+            LogService = nil,
+        }, --> Necessary for script, do not adjust!
 
-getgenv().Key = "MARU-CQ4OC-5XUTJ-HW6T-TO7FF-XYFP5"
-getgenv().id = "1037147029614362624"
-getgenv().Script_Mode = "Kaitun_Script"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+        Loops = {
+            BringMob = false,
+            Attack = false,
+            UseSkills = false,
+            M1s = false,
+            AttackLoop = false,
+        },  --> Necessary for script, do not adjust!
+
+        Allowed_Actions = {
+            FarmingLevel = true, --> Auto farming level
+            CollectChests = true, --> Collect all chests!
+            TierFruits = {"Uncommon", "Common", "Rare", "Epic", "Legendary"},
+            StoreFruits = true, --> Auto store devil fruit!
+            BossesAim = { "Expert Swordman [Lv. 3000]", "King Samurai [Lv. 3500]", "Dragon [Lv. 5000]",
+            "Ms. Mother [Lv. 7500]", "Ghost Ship", "SeaKing", "HydraSeaKing" }, --> Focus on these bosses!
+            SpecificItemsToGet = {"DarkLeg", "Cyborg", "Buso", "Ken", "WaterStyle", "DragonClaw", "Electro"}, --> Get specific items!
+
+            M1 = true, --> Auto M1 attack!
+            Skills = {
+                Enabled = true,
+                List = {FS = true, SW = true, DF = true},
+                DFList = { Z = true, X = true, C = true, V = true }
+            },
+
+            Stats = {
+                Melee = { Name = "Melee", Enabled = true }, --> Enable to upgrade!
+                Sword = { Name = "sword", Enabled = true },
+                Defense = { Name = "Defense", Enabled = true },
+                Fruit = { Name = "DF", Enabled = false }
+            }, --> Upgrade order: Melee --> Sword --> Defense --> Fruit
+
+            FindSeaMonster = false, --> Auto find sea monsters!
+
+            Sea2Unlock = true, --> Auto unlock Sea 2!
+            Sea3Unlock = true, --> Auto unlock Sea 3!
+
+            Aimlock = false,
+            MouseLock = false,
+
+            Protect = false,
+
+            Webhook = {
+                Enabled = false,
+                Level = 10,
+                Logs = {PlayerStatus = true, Bosses = true, Console = true},
+                URL = ""--"https://discord.com/api/webhooks/id/token",
+            },
+        },
+
+        OnlyFarm = { ["Dragon [Lv. 5000]"] = { Enabled = false, At = 5000, Keep = 100 } }, --> Focus on Dragon [Lv. 5000]!, Keep 100 orbs then spawn
+
+        Farm = CFrame.Angles(math.pi / -2, 0, 0) * CFrame.new(0, 0, 7), --> Efficient farming!
+
+        -- Optimize farming
+        Options_Disable = {
+            Textures = true,
+            VisualEffects = true,
+            Parts = true,
+            Particles = true,
+            Sky = true,
+            FullBright = false
+        },
+
+        Performance = {
+            SetFPS = 30, --> Useful for low cpu usage, while using in long time!
+            WhiteScreen = false, --> Not recommended to use
+        }
+    }
+    _G.Config = k
+end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaCat-KaitunKL.lua"))()
