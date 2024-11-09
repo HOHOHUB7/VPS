@@ -1,6 +1,6 @@
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-
+task.wait(15)
 script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
 
 getgenv().petsGoConfig = {
