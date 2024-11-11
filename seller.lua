@@ -7,10 +7,10 @@ getgenv().petsGoConfig = {
     -- Plaza hop delay will reset if someone purchase something.
     PLAZA_HOP_DELAY = 15,  -- (minutes) If no one purchase, server hop
 
-    SELL_10M_PET = true,  -- true/false, enable selling 10m+ pets
+    SELL_10M_PET = false,  -- true/false, enable selling 10m+ pets
     SELL_PERCENTAGE_10M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP (Example: 100k RAP config 0.9 = Sell For 90k Gems)
 
-    SELL_50M_PET = true,  -- true/false, enable selling 50m+ pets
+    SELL_50M_PET = false,  -- true/false, enable selling 50m+ pets
     SELL_PERCENTAGE_50M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     SELL_100M_PET = true,  -- true/false, enable selling 100m+ pets (excluding huge/secrets)
