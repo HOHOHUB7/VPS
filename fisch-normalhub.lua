@@ -1,3 +1,6 @@
+wait(10)
+
+
 local accshook = {
     ["EllisonBradley928"] =  "https://discord.com/api/webhooks/1305743894444773436/9VCZphRg4IlHsLR3C3alXwqNt713DYrSGvGN5owN7DmDi3Dm749NdbZeXchBc1bUBMRb",
     ["MontgomeryJermaine21"] =  "https://discord.com/api/webhooks/1305744002867396689/Ob4RKBgARaNRZ39NGAiyXNZTPi05Hfp_BYodyUDynGwxd65oOVK9dzfKoUQpeuItuH3p",
