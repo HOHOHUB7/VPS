@@ -9,7 +9,7 @@ _G.Kaitun = true
         ["WebHook"] = {
             ["Link"] = "https://discord.com/api/webhooks/1305714991235731486/Vp9vt8wcZ9OSvDTZ53pFjI2oKyc6JT_Tu6vstMBPKJZsx4tZ1o352Vf_2z7JIh0PDC2_",
             ["Discord Id"] = "",
-            ["Delay Sending"] = 30, 
+            ["Delay Sending"] = 60, 
             ["Auto Sending"] = true,
             ["Ping With Discord Id"] = false,
         },
