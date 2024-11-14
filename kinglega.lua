@@ -4,10 +4,10 @@ _G.Settings = {
     ["SellFish"] = {
         ["Enable"] = false,
         ["Method"] = {
-            ["Event"] = true,
-            ["Enchant"] = true,
-            ["Mythical"] = true,
-            ["Legenday"] = true
+            ["Event"] = false,
+            ["Enchant"] = false,
+            ["Mythical"] = false,
+            ["Legenday"] = false
         }
     },
     ['MethodShake'] = "Fast", -- Fast, Fix bug
