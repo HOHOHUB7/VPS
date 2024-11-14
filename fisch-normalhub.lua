@@ -1,6 +1,6 @@
 _G.Settings = {
     ["AutoFishing"] = true,
-    ["SellFish"] = true,
+    ["SellFish"] = false,
     ['MethodShake'] = "Fast", -- Fast, Fix bug
     ["Instant_Coin"] = true,
     ["SetSteek"] = 100,
