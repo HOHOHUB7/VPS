@@ -1,6 +1,16 @@
 _G.Settings = {
+    ["AfkCheckTime"] = 300, -- Seconds
     ["AutoFishing"] = true,
-    ["SellFish"] = true,
+    ["SellFish"] = {
+        ["Enable"] = true,
+        ["Method"] = {
+            ["Event"] = true,
+            ["Enchant"] = true,
+            ["Mythical"] = true,
+            ["Legenday"] = true
+        }
+    },
+    ['MakeRod'] = {'Aurora Rod', 'Trident Rod'},
     ['MethodShake'] = "Fast", -- Fast, Fix bug
     ["Instant_Coin"] = true,
     ["SetSteek"] = 100,
