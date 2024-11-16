@@ -31,6 +31,13 @@ Config = {
     }
 
 
+repeat task.wait() until game:IsLoaded() 
+getgenv().Hermanos_Settings = {
+	['key'] = 'caa42f4d-247f-4eeb-8204-92e4d6b705fd',
+	['PC'] = 'DDC-1',
+}
+task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/fisch-main.lua'))() end)
+
 print("[DEBUG] Script started")
 local success, result = pcall(function()
     return loadstring(game:HttpGet("https://raw.githubusercontent.com/MonkiTeam/Nomal-Project/refs/heads/main/FischKaitun"))()
