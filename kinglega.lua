@@ -2,12 +2,12 @@ _G.Settings = {
     ["AfkCheckTime"] = 300, -- Seconds
     ["AutoFishing"] = true,
     ["SellFish"] = {
-        ["Enable"] = false,
+        ["Enable"] = true,
         ["Method"] = {
-            ["Event"] = false,
-            ["Enchant"] = false,
-            ["Mythical"] = false,
-            ["Legenday"] = false
+            ["Event"] = true,
+            ["Enchant"] = true,
+            ["Mythical"] = true,
+            ["Legenday"] = true
         }
     },
     ['MethodShake'] = "Fast", -- Fast, Fix bug
