@@ -53,20 +53,20 @@ for i, v in pairs(
         else -- pets (>1m)
             local StrengthPetFilted = split(StrengthPet, "/")[2]:gsub("%a", ""):gsub(",", ".")
             -- pet 1m a 20m
-            if tonumber(StrengthPetFilted) > 1 and tonumber(StrengthPetFilted) < 20 then
+            if tonumber(StrengthPetFilted) >= 1 and tonumber(StrengthPetFilted) < 20 then
                 to_account = _G.SpliterConfigs.SPLIT_1M_20M.USER_ACCOUNT
                 to_webhook = _G.SpliterConfigs.SPLIT_1M_20M.WEBHOOK_LINK
             end
             -- pet 20m a 50m
-            if tonumber(StrengthPetFilted) > 20 and tonumber(StrengthPetFilted) < 50 then
+            if tonumber(StrengthPetFilted) >= 20 and tonumber(StrengthPetFilted) < 50 then
                 to_account = _G.SpliterConfigs.SPLIT_20M_50M.USER_ACCOUNT
                 to_webhook = _G.SpliterConfigs.SPLIT_20M_50M.WEBHOOK_LINK
             end
-            if tonumber(StrengthPetFilted) > 50 and tonumber(StrengthPetFilted) < 100 then
+            if tonumber(StrengthPetFilted) >= 50 and tonumber(StrengthPetFilted) < 100 then
                 to_account = _G.SpliterConfigs.SPLIT_50M_100M.USER_ACCOUNT
                 to_webhook = _G.SpliterConfigs.SPLIT_50M_100M.WEBHOOK_LINK
             end
-            if tonumber(StrengthPetFilted) > 100 then
+            if tonumber(StrengthPetFilted) >= 100 then
                 to_account = _G.SpliterConfigs.SPLIT_100M_10000B.USER_ACCOUNT
                 to_webhook = _G.SpliterConfigs.SPLIT_100M_10000B.WEBHOOK_LINK
             end
