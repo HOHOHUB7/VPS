@@ -1,67 +1,38 @@
-script_key = "lUiDdEVtbtUkyFZZApVwpeUoPMXXxeFY"
-getgenv().Settings = {
-    Sniper = {
-        Active = false,
-        Items = {
-            --// Example Settings, everything is editable.
-            ["All Rarity: Legendary"] = {Class = "Pet", Price = "0%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "0%"}, --// 20% below or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "0%"}, --// 20% above or less of RAP.
-            ["RAP Above: 500k"] = {Class = "Pet", Price = "0%", UseCosmicValues = true}, --// 15% below Cosmic Value price & RAP Above 500k
-            ["Difficulty Above: 5m"] = {Class = "Pet", Price = "+50%", UseCosmicValues = true}, --// 50% above Cosmic Value price & Difficulty Above 5m
-            ["Kitsune Fox"] = {Class = "Pet", Price = 15000, InventoryLimit = 52}, --// Normal Listing Price.
-        },
-        Serverhop = {
-            ["Switch Servers"] = true,
-            ["Teleport Delay (s)"] = 3,
-            ["Save # Last Joined Servers"] = 10,
-        },
-        Webhook = {
-            ["URL"] = "https://discord.com/api/webhooks/1303564260559028335/KcTTKSuskR-VZpeMsdLj6OQMYulEgMZIEwlICkO7GuC3xUS6fxX_BytBncskCausWYtO",
-            ["Send Embeds"] = true,
-            ["Remove Username"] = false,
-            ["Global Snipes"] = false,
-        },
-        StopParams = {
-            ["Limits Reached"] = false,
-            ["Diamonds Hit: 250k"] = false,
-            ["60 Minutes"] = false,
-            ["Switch To Selling"] = false,
-        },
-    },
-    Seller = {
-        Active = true,
-        Items = {
-            --// Example Settings, everything is editable.
-            ["All Rarity: Superior"] = {Class = "Pet", Price = "-5%"}, --// Normal RAP.
-            ["All Rarity: Exotic"] = {Class = "Pet", Price = "-5%"}, --// 20% above or less of RAP.
-            ["All Rarity: Mythical"] = {Class = "Pet", Price = "-5%"}, --// 20% below or less of RAP.
-            ["RAP Above: 15m"] = {Class = "Pet", Price = -5000}, --// 5k off of RAP & RAP Above 15m.
-            ["Difficulty Above: 5m"] = {Class = "Pet", Price = "-5%"}, --// 10% above or less of RAP & Difficulty Above 5m.
-        },
-        Serverhop = {
-            ["Switch Servers"] = true,
-            ["Teleport Delay (m)"] = 15,
-        },
-        Webhook = {
-            ["URL"] = "https://discord.com/api/webhooks/1303564260559028335/KcTTKSuskR-VZpeMsdLj6OQMYulEgMZIEwlICkO7GuC3xUS6fxX_BytBncskCausWYtO",
-            ["Send Embeds"] = true,
-            ["Remove Username"] = false,
-        },
-        StopParams = {
-            ["Item Runout"] = false,
-            ["Diamonds Hit: 1b"] = false,
-            ["60 Minutes"] = false,
-            ["Switch To Sniping"] = false,
-        },
-        Other = {
-            ["Auto Accept Mail"] = true,
-            ["Diamonds Hit: 500k Sendout"] = "FASTZIN_STORE",
-            ["Always Try Adding Listings"] = true,
-            ["Never Join Friendslist"] = false,
-        },
-    },
+script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
 
-    [[ Thank you for using System Exodus <3! ]]
+getgenv().petsGoConfig = {
+    DISCORD_ID = "1037147029614362624",
+     PLAZA_WEBHOOK_URL = "https://discord.com/api/webhooks/1305321371978436608/WA_DConhxKPY4ELAB-jWllN3XEsbQnCL9rnGsltO9eueOFzYz4vSubFLTS8Df918dTze",
+
+    -- Plaza hop delay will reset if someone purchase something.
+    PLAZA_HOP_DELAY = 15,  -- (minutes) If no one purchase, server hop
+
+    SELL_10M_PET = false,  -- true/false, enable selling 10m+ pets
+    SELL_PERCENTAGE_10M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP (Example: 100k RAP config 0.9 = Sell For 90k Gems)
+
+    SELL_50M_PET = false,  -- true/false, enable selling 50m+ pets
+    SELL_PERCENTAGE_50M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    SELL_100M_PET = true,  -- true/false, enable selling 100m+ pets (excluding huge/secrets)
+    SELL_PERCENTAGE_100M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    SELL_HUGE_SECRET = false,  -- true/false, enable selling secret and huges
+    SELL_PERCENTAGE_HUGE_SECRET = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    SELL_POTION = true,  -- true/false (only sell insta luck 4)
+    SELL_POTION_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    SELL_KEY = true,  -- true/false, enable selling crystal/secret keys
+    SELL_KEY_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    SELL_BAIT = true,  -- true/false, enable selling exclusive fishing bait
+    SELL_BAIT_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    SELL_CHEST = true,  -- true/false, enable selling exclusive treasure chest
+    SELL_CHEST_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+
+    MAIL_GEMS_USERNAME = "FASTZIN_STORE",  -- Empty = Disabled Gem Mail
+    MAIL_GEMS_MIN = 1000000,  -- Minimum gems required to send
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/717430e3bbde3530feb824de729fcc90.lua"))()
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/074ae419ea26f2a773d8e592958ec2e8.lua"))() 
