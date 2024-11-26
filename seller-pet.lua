@@ -1,8 +1,10 @@
 script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
 
 getgenv().petsGoConfig = {
-    DISCORD_ID = "1037147029614362624",
+     DISCORD_ID = "1037147029614362624",
      PLAZA_WEBHOOK_URL = "https://discord.com/api/webhooks/1305321371978436608/WA_DConhxKPY4ELAB-jWllN3XEsbQnCL9rnGsltO9eueOFzYz4vSubFLTS8Df918dTze",
+
+    MAIL_GEM_WEBHOOK_URL = "https://discord.com/api/webhooks/1310890061037961277/aoU8MFehs2VoU3I2JgMDCqNdhSeV9Bhzt0attsXmffAM_IDtZuyISFnKCBp53Z1n-U1s",
 
     -- Plaza hop delay will reset if someone purchase something.
     PLAZA_HOP_DELAY = 15,  -- (minutes) If no one purchase, server hop
@@ -16,7 +18,7 @@ getgenv().petsGoConfig = {
     SELL_100M_PET = true,  -- true/false, enable selling 100m+ pets (excluding huge/secrets)
     SELL_PERCENTAGE_100M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
-    SELL_HUGE_SECRET = false,  -- true/false, enable selling secret and huges
+    SELL_HUGE_SECRET = true,  -- true/false, enable selling secret and huges
     SELL_PERCENTAGE_HUGE_SECRET = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     SELL_POTION = true,  -- true/false (only sell insta luck 4)
@@ -24,6 +26,8 @@ getgenv().petsGoConfig = {
 
     SELL_KEY = true,  -- true/false, enable selling crystal/secret keys
     SELL_KEY_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+    SELL_KEY_LOWER = true,  -- true/false, enable selling lower crystal key
+    SELL_KEY_UPPER = false,  -- true/false, enable selling upper crystal key
 
     SELL_BAIT = true,  -- true/false, enable selling exclusive fishing bait
     SELL_BAIT_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
@@ -32,7 +36,7 @@ getgenv().petsGoConfig = {
     SELL_CHEST_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     MAIL_GEMS_USERNAME = "FASTZIN_STORE",  -- Empty = Disabled Gem Mail
-    MAIL_GEMS_MIN = 1000000,  -- Minimum gems required to send
+    MAIL_GEMS_MIN = 10000000,  -- Minimum gems required to send
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/074ae419ea26f2a773d8e592958ec2e8.lua"))() 
