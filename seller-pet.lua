@@ -16,13 +16,13 @@ getgenv().petsGoConfig = {
     SELL_PERCENTAGE_50M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     SELL_100M_PET = true,  -- true/false, enable selling 100m+ pets (excluding huge/secrets)
-    SELL_PERCENTAGE_100M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+    SELL_PERCENTAGE_100M = 1.2,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     SELL_HUGE_SECRET = true,  -- true/false, enable selling secret and huges
     SELL_PERCENTAGE_HUGE_SECRET = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     SELL_POTION = true,  -- true/false (only sell insta luck 4)
-    SELL_POTION_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+    SELL_POTION_PERCENTAGE = 1.2,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     SELL_KEY = true,  -- true/false, enable selling crystal/secret keys
     SELL_KEY_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
