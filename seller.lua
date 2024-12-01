@@ -37,6 +37,6 @@ getgenv().petsGoConfig = {
     SELL_CHEST_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
     MAIL_GEMS_USERNAME = "FASTZIN_STORE",  -- Empty = Disabled Gem Mail
-    MAIL_GEMS_MIN = 10000000,  -- Minimum gems required to send
+    MAIL_GEMS_MIN = 1000000,  -- Minimum gems required to send
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/074ae419ea26f2a773d8e592958ec2e8.lua"))() 
