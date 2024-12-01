@@ -1,4 +1,4 @@
-script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
+script_key="dPPhgrEyLHxstNrHqMfFEhPPrbxFYrPE";
 
 
 getgenv().petsGoConfig = {
