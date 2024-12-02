@@ -1,8 +1,3 @@
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-player:Kick("Você escolheu sair do jogo. Até a próxima!")
-
-
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
