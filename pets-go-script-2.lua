@@ -1,6 +1,6 @@
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
+script_key="dPPhgrEyLHxstNrHqMfFEhPPrbxFYrPE";
 -- 
 -- dPPhgrEyLHxstNrHqMfFEhPPrbxFYrPE key pra voltar
 getgenv().petsGoConfig = {
