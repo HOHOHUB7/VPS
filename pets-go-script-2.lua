@@ -1,8 +1,8 @@
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-script_key="dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV";
--- 
--- dPPhgrEyLHxstNrHqMfFEhPPrbxFYrPE key pra voltar
+script_key="dPPhgrEyLHxstNrHqMfFEhPPrbxFYrPE";
+-- dOfSrLWDyauFbCSkkEFAHvWlUvslwqrV
+--  key pra voltar
 getgenv().petsGoConfig = {
 EVENT_EGG = true,
     HIDE_NAME = false,  
