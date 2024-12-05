@@ -37,7 +37,7 @@ getgenv().petsGoConfig = {
 
     SELL_KEY = true,  -- true/false, enable selling crystal/secret keys
     SELL_KEY_MIN = 10,  -- 1-5000 Minimum Quantity to sell
-    SELL_KEY_PERCENTAGE = 1.1,  -- 1 = 100% RAP, 0.8 = 80% RAP
+    SELL_KEY_PERCENTAGE = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
     SELL_KEY_LOWER = true,  -- true/false, enable selling lower crystal key
     SELL_KEY_UPPER = false,  -- true/false, enable selling upper crystal key
 
