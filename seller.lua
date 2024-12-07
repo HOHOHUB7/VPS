@@ -14,6 +14,10 @@ getgenv().petsGoConfig = {
     SELL_10M_PET_MIN = 10,  -- 1-5000 Minimum Quantity to sell
     SELL_PERCENTAGE_10M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP (Example: 100k RAP config 0.9 = Sell For 90k Gems)
 
+         SELL_EGG = true,  -- true/false
+    SELL_EGG_MIN = 5,  -- 1-5000 Minimum Quantity to sell [Script Doesn't Auto Sell HUGE Egg]
+    SELL_EGG_PERCENTAGE = 1,   -
+
     SELL_25M_PET = false,  -- true/false, enable selling 25m+ pets
     SELL_PERCENTAGE_25M = 1,  -- 1 = 100% RAP, 0.8 = 80% RAP
 
