@@ -150,7 +150,9 @@ task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
     updateParagraph(3, "Fruits: Apple, Banana") -- Exemplo de atualização de frutas
     updateParagraph(4, "Place: Spawn Area") -- Exemplo de localização
 end)
+
 game:GetService("RunService"):Set3dRenderingEnabled(false)
+
 -- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos e reduzir os gráficos
 makePlayersInvisible()
 removeAllObjectsAndEffects()
