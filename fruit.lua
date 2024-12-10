@@ -13,7 +13,7 @@ FullScreenUI.createParagraph("Action: N/A", 5, 4)
 
 local Heartbeat = game:GetService("RunService").Heartbeat
 
-while true
+while true do
 
 end
 
