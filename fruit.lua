@@ -44,6 +44,51 @@ local filterFruits = {
     "Ope",
 }
 
+function matchBestFruit(theFruit) 
+    local match = false
+    for i = 1, #filterFruits do
+        if filterFruits[i] == theFruit then
+            match = true
+        end
+    end
+    return match
+end
+
+function spinFruit(thisSlot)
+
+    local thisFruitInSlot = game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[thisSlot].Value
+
+    if matchBestFruit(thisFruitInSlot) == false then
+        local args = {
+            [1] = "FruitsHandler",
+            [2] = "SwitchSlot",
+            [3] = {
+                ["Slot"] = thisSlot
+            }
+        }
+        game:GetService("ReplicatedStorage").Replicator:InvokeServer(unpack(args))
+
+        local args = {
+            [1] = "FruitsHandler",
+            [2] = "Spin",
+            [3] = {}
+            }
+            
+        game:GetService("ReplicatedStorage").Replicator:InvokeServer(unpack(args))
+    else
+        if thisSlot <= 4 then
+            local args = {
+                [1] = "FruitsHandler",
+                [2] = "SwitchSlot",
+                [3] = {
+                    ["Slot"] = thisSlot + 1
+                }
+            }
+            game:GetService("ReplicatedStorage").Replicator:InvokeServer(unpack(args))
+        end
+    end
+end
+
 task.spawn(function()
     local place =  "N/A"        
     if gameId == 12375113481 then 
