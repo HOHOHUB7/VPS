@@ -1,0 +1,69 @@
+-- Obtenha o PlayerGui do jogador
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Desative as interfaces padrão do Roblox
+local starterGui = game:GetService("StarterGui")
+starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false) -- Desativa todas as GUIs padrão
+
+-- Crie uma ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "FullScreenUI"
+screenGui.IgnoreGuiInset = true -- Ignora o menu superior do Roblox
+screenGui.ResetOnSpawn = false -- Garante que a GUI não desapareça ao reiniciar
+screenGui.Parent = playerGui
+
+-- Crie um Frame para o fundo
+local backgroundFrame = Instance.new("Frame")
+backgroundFrame.Size = UDim2.new(1, 0, 1, 0) -- Preenche toda a tela
+backgroundFrame.Position = UDim2.new(0, 0, 0, 0)
+backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0) -- Fundo preto
+backgroundFrame.ZIndex = 10 -- Prioridade mais alta
+backgroundFrame.Parent = screenGui
+
+-- Tabela para armazenar os TextLabels
+local paragraphLabels = {}
+
+-- Função para criar texto centralizado
+local function createParagraph(text, order)
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Tamanho relativo
+    textLabel.Position = UDim2.new(0.1, 0, 0.35 + (order * 0.12), 0) -- Centraliza e ajusta a posição
+    textLabel.BackgroundTransparency = 1 -- Sem fundo
+    textLabel.Text = text
+    textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor branca
+    textLabel.Font = Enum.Font.SourceSans -- Fonte
+    textLabel.TextScaled = true -- Escala o texto automaticamente
+    textLabel.ZIndex = 11 -- Um nível acima do fundo
+    textLabel.Parent = backgroundFrame
+
+    -- Salvar o TextLabel na tabela para edição posterior
+    paragraphLabels[order] = textLabel
+end
+
+-- Função para atualizar o texto de um parágrafo
+local function updateParagraph(order, newText)
+    local textLabel = paragraphLabels[order]
+    if textLabel then
+        textLabel.Text = newText
+    else
+        warn("Parágrafo com índice " .. order .. " não encontrado.")
+    end
+end
+
+-- Adicione os parágrafos iniciais
+local paragraphs = {
+    "Username: N/A",
+    "Gems: N/A",
+    "Fruits: N/A",
+    "Place: N/A"
+}
+
+for i, paragraph in ipairs(paragraphs) do
+    createParagraph(paragraph, i) -- Ordem começa em 1
+end
+
+-- Exemplo de edição em tempo real (pode ser testado dinamicamente no jogo)
+task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
+    updateParagraph(2, "Texto do segundo parágrafo foi alterado!")
+end)
