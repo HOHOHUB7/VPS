@@ -30,6 +30,20 @@ local codes = {
     "GLITTER780K"
 }
 
+local filterFruits = {
+    -- miticas
+    "DarkXQuake",
+    "Okuchi",
+    "Soul",
+    "DragonV2",
+    "Nika",
+    "Lightning",
+    "Venom",
+    "Leopard",
+    "Dough",
+    "Ope",
+}
+
 task.spawn(function()
     local place =  "N/A"        
     if gameId == 12375113481 then 
