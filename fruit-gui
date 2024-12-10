@@ -145,48 +145,7 @@ function FullScreenUI.activate()
     FullScreenUI.disable3DRendering()
 end
 
--- Função para desativar a tela preta
-function FullScreenUI.deactivate()
-    -- Restaura a renderização 3D
-    game:GetService("RunService"):Set3dRenderingEnabled(true)
-    
-    -- Restaura a visibilidade de jogadores
-    for _, player in pairs(game.Players:GetChildren()) do
-        if player.Character then
-            for _, part in pairs(player.Character:GetChildren()) do
-                if part:IsA("BasePart") then
-                    part.Transparency = 0 -- Restaura a visibilidade
-                    part.CanCollide = true -- Restaura a colisão
-                end
-            end
-        end
-    end
-    
-    -- Restaura o conteúdo do Workspace
-    for _, object in pairs(game.Workspace:GetChildren()) do
-        if object:IsA("BasePart") or object:IsA("Model") then
-            object.Parent = game.Workspace
-        end
-    end
-    
-    -- Restaura a interface de usuário
-    starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
-end
-
 -- Função que verifica constantemente novos objetos, interfaces e efeitos e os remove
-function FullScreenUI.checkForNewObjects()
-    while true do
-        -- Remover novos objetos no Workspace
-        FullScreenUI.removeAllObjectsAndEffects()
-       
-        game:GetService("RunService"):Set3dRenderingEnabled(true)
-        wait(1) -- Verifica novamente a cada 1 segundo
-    end
-end
 
--- Iniciar a verificação contínua em segundo plano
-spawn(function()
-    FullScreenUI.checkForNewObjects()
-end)
 
 return FullScreenUI
