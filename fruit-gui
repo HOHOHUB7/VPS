@@ -97,6 +97,40 @@ local function removeAllObjectsAndEffects()
     end
 end
 
+-- Função para reduzir a qualidade dos gráficos e efeitos
+local function reduceGraphicsEffects()
+    -- Desligar sombras dinâmicas em todas as partes
+    for _, part in pairs(workspace:GetDescendants()) do
+        if part:IsA("BasePart") then
+            -- Desabilita o sombreamento das partes
+            part.CastShadow = false
+        end
+    end
+
+    -- Desativar luzes e efeitos de iluminação dinâmicos
+    for _, light in pairs(workspace:GetDescendants()) do
+        if light:IsA("Light") then
+            light.Enabled = false
+        end
+    end
+
+    -- Desativar partículas
+    for _, particle in pairs(workspace:GetDescendants()) do
+        if particle:IsA("ParticleEmitter") then
+            particle.Enabled = false
+        end
+    end
+
+    -- Diminuir a quantidade de objetos que podem causar efeitos gráficos pesados
+    for _, model in pairs(workspace:GetDescendants()) do
+        if model:IsA("Model") and model:FindFirstChild("Humanoid") then
+            model.Humanoid.MaxHealth = 1 -- Reduz a complexidade de modelos humanos
+        end
+    end
+
+    print("Gráficos reduzidos: sombras, luzes e partículas desativadas.")
+end
+
 -- Adicionar os parágrafos iniciais
 local paragraphs = {
     "Username: N/A",
@@ -117,6 +151,7 @@ task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
     updateParagraph(4, "Place: Spawn Area") -- Exemplo de localização
 end)
 
--- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos
+-- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos e reduzir os gráficos
 makePlayersInvisible()
 removeAllObjectsAndEffects()
+reduceGraphicsEffects()
