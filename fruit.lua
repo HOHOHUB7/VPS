@@ -14,7 +14,8 @@ FullScreenUI.createParagraph("Action: N/A", 5, 4)
 local Heartbeat = game:GetService("RunService").Heartbeat
 
 while true do
-
+    Heartbeat:Wait()
+    
 end
 
 -- Atualizar parágrafos depois de algum tempo
