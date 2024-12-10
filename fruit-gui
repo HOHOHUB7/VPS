@@ -140,7 +140,7 @@ function FullScreenUI.activate()
     -- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos e reduzir os gráficos
     FullScreenUI.makePlayersInvisible()
     FullScreenUI.removeAllObjectsAndEffects()
-    FullScreenUI.reduceGraphicsEffects()
+    -- FullScreenUI.reduceGraphicsEffects()
     FullScreenUI.disable3DRendering()
 end
 
