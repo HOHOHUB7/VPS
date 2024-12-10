@@ -27,10 +27,12 @@ local paragraphLabels = {}
 -- Função para criar texto centralizado
 local function createParagraph(text, order, totalParagraphs)
     local textLabel = Instance.new("TextLabel")
-    textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Tamanho relativo
-    -- Centraliza na tela, ajustando a posição vertical com base no total de parágrafos
-    textLabel.Position = UDim2.new(0.5, 0, 0.5 - (totalParagraphs * 0.05) + ((order - 1) * 0.12), 0)
-    textLabel.AnchorPoint = Vector2.new(0.5, 0.5) -- Define o centro como ponto de referência
+    textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Largura de 80% da tela e altura relativa
+    -- Calcula a posição vertical para centralizar todos os parágrafos proporcionalmente
+    local spacing = 0.12 -- Espaçamento entre os parágrafos
+    local baseY = 0.5 - (totalParagraphs * spacing) / 2
+    textLabel.Position = UDim2.new(0.5, 0, baseY + (order - 1) * spacing, 0)
+    textLabel.AnchorPoint = Vector2.new(0.5, 0) -- Centraliza horizontalmente
     textLabel.BackgroundTransparency = 1 -- Sem fundo
     textLabel.Text = text
     textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor branca
