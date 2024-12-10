@@ -147,7 +147,7 @@ task.spawn(function()
                 spinFruit(theSlot)
             else
                 local destinationPlaceId = 12375113481
-                local player = Players.LocalPlayer
+                local player = game:GetService("Players").LocalPlayer
 
                 TeleportService:Teleport(destinationPlaceId, player)
             end
@@ -157,7 +157,7 @@ task.spawn(function()
             if game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value > 500 then
                 
                 local destinationPlaceId = 9224601490
-                local player = Players.LocalPlayer
+                local player = game:GetService("Players").LocalPlayer
 
                 TeleportService:Teleport(destinationPlaceId, player)
             end
