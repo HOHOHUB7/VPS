@@ -18,20 +18,16 @@ local gameId = game.PlaceId
 local player = game:GetService("Players").LocalPlayer
 
 local codes = {
-    "GLITTER780K",
-    "4BUNDANCY",
-    "OMGREBOOTAGAIN",
-    "NANAP0CALYPSE!",
-    "770KWOW!",
-    "760KISKRAZY",
-    "750KINSANE!",
-    "SORRY4DELAY",
-    "NEWBOUNTYERA!",
-    "HOWLINGFALL!",
-    "LVLBUFFHYPE",
-    "ICEW0LF",
-    "SM4LLFRY",
-    "HAHA740K!"
+    "830KBRO!",
+    "WINTER2024!",
+    "OMGUPDATE19!",
+    "COOKEDPASTRY!",
+    "WINTER2024!",
+    "SPLENDID820",
+    "810TIME!",
+    "BIG8HUNDO!",
+    "SHINE790K",
+    "GLITTER780K"
 }
 
 task.spawn(function()
