@@ -40,7 +40,7 @@ task.spawn(function()
 
         -- SPIN UPDATE
         local D_SPINS = game:GetService("Players").LocalPlayer.MAIN_DATA.SpinCount.Value
-        FullScreenUI.updateParagraph(2, "Spin Counter: "..D_SPINS)
+        FullScreenUI.updateParagraph(6, "Spin Counter: "..D_SPINS)
 
         if  gameId == 9224601490 then 
             
