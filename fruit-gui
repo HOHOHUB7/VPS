@@ -131,27 +131,42 @@ local function reduceGraphicsEffects()
     print("Gráficos reduzidos: sombras, luzes e partículas desativadas.")
 end
 
--- Adicionar os parágrafos iniciais
-local paragraphs = {
-    "Username: N/A",
-    "Gems: N/A",
-    "Fruits: N/A",
-    "Place: N/A"
-}
-
-for i, paragraph in ipairs(paragraphs) do
-    createParagraph(paragraph, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
+-- Função para ativar e desativar a tela preta
+local function toggleBlackScreen(enable)
+    if enable then
+        -- Criar a tela preta novamente, caso não exista
+        if not screenGui.Parent then
+            screenGui.Parent = playerGui
+            -- Adiciona os parágrafos
+            local paragraphs = {
+                "Username: N/A",
+                "Gems: N/A",
+                "Fruits: N/A",
+                "Place: N/A"
+            }
+            for i, paragraph in ipairs(paragraphs) do
+                createParagraph(paragraph, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
+            end
+        end
+        -- Torna jogadores invisíveis e remove objetos/effects
+        makePlayersInvisible()
+        removeAllObjectsAndEffects()
+        reduceGraphicsEffects()
+        
+        -- Desativa a renderização 3D
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
+    else
+        -- Destruir a tela preta se estiver habilitada
+        if screenGui.Parent then
+            screenGui:Destroy()
+        end
+        
+        -- Restaura a renderização 3D
+        game:GetService("RunService"):Set3dRenderingEnabled(true)
+    end
 end
 
--- Exemplo de edição em tempo real (pode ser testado dinamicamente no jogo)
-task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
-    updateParagraph(1, "Username: " .. player.Name) -- Atualiza com o nome do jogador
-    updateParagraph(2, "Gems: 150") -- Exemplo de atualização de gemas
-    updateParagraph(3, "Fruits: Apple, Banana") -- Exemplo de atualização de frutas
-    updateParagraph(4, "Place: Spawn Area") -- Exemplo de localização
-end)
-
--- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos e reduzir os gráficos
-makePlayersInvisible()
-removeAllObjectsAndEffects()
-reduceGraphicsEffects()
+-- Exemplo de como ativar/desativar a tela preta
+toggleBlackScreen(true)  -- Ativa a tela preta e desativa a renderização 3D
+wait(5)                  -- Espera 5 segundos
+toggleBlackScreen(false) -- Desativa a tela preta e restaura a renderização 3D
