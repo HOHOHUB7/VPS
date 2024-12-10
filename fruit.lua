@@ -11,6 +11,12 @@ FullScreenUI.createParagraph("Fruits: N/A", 3, 4)
 FullScreenUI.createParagraph("Place: N/A", 4, 4)
 FullScreenUI.createParagraph("Action: N/A", 5, 4)
 
+local Heartbeat = game:GetService("RunService").Heartbeat
+
+while true
+
+end
+
 -- Atualizar parágrafos depois de algum tempo
 task.delay(5, function()
     FullScreenUI.updateParagraph(1, "Username: teste")
