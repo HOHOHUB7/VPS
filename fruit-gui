@@ -186,6 +186,24 @@ function FullScreenUI.checkForNewObjects()
             end
         end
 
+        local screenGui = Instance.new("ScreenGui")
+        screenGui.Name = "FullScreenUI"
+        screenGui.IgnoreGuiInset = true
+        screenGui.ResetOnSpawn = false
+        screenGui.Parent = playerGui
+        
+        -- Crie um Frame para o fundo preto
+        local backgroundFrame = Instance.new("Frame")
+        backgroundFrame.Size = UDim2.new(1, 0, 1, 0)
+        backgroundFrame.Position = UDim2.new(0, 0, 0, 0)
+        backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+        backgroundFrame.ZIndex = 10
+        backgroundFrame.Parent = screenGui
+
+        for i, paragraphLabel in ipairs(paragraphLabels) do
+            FullScreenUI.createParagraph(paragraphLabel.Text, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
+        end
+
         wait(1) -- Verifica novamente a cada 1 segundo
     end
 end
