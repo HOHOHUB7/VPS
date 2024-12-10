@@ -18,8 +18,3 @@ task.delay(5, function()
     FullScreenUI.updateParagraph(3, "Fruits: teste")
     FullScreenUI.updateParagraph(4, "Place: teste")
 end)
-
--- Quando desejar desativar
-task.delay(10, function()
-    FullScreenUI.deactivate()
-end)
