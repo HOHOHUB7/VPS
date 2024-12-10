@@ -11,6 +11,7 @@ FullScreenUI.createParagraph("Gems: N/A", 2, 4)
 FullScreenUI.createParagraph("Fruits: N/A", 3, 4)
 FullScreenUI.createParagraph("Place: N/A", 4, 4)
 FullScreenUI.createParagraph("Action: N/A", 5, 4)
+FullScreenUI.createParagraph("Spin Counter: N/A", 6, 4)
 
 local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
@@ -36,5 +37,13 @@ task.spawn(function()
         -- GEMS UPDATE
         local D_GEMS = game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value
         FullScreenUI.updateParagraph(2, "Gems: "..D_GEMS)
+
+        -- SPIN UPDATE
+        local D_SPINS = game:GetService("Players").LocalPlayer.MAIN_DATA.SpinCount.Value
+        FullScreenUI.updateParagraph(2, "Spin Counter: "..D_SPINS)
+
+        if  gameId == 9224601490 then 
+            
+        end
     end  
 end)
