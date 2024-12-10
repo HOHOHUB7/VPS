@@ -4,6 +4,8 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 -- Desative todas as interfaces padrão do Roblox
 local starterGui = game:GetService("StarterGui")
+
+-- Desativa todas as interfaces padrão do Roblox (chat, lista de jogadores, etc.)
 starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
 
 -- Remova todas as ScreenGui e outros objetos de interface do PlayerGui
@@ -16,8 +18,8 @@ end
 -- Crie uma ScreenGui para a tela preta
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "FullScreenUI"
-screenGui.IgnoreGuiInset = true
-screenGui.ResetOnSpawn = false
+screenGui.IgnoreGuiInset = true -- Ignora o menu superior do Roblox
+screenGui.ResetOnSpawn = false -- Garante que a GUI não desapareça ao reiniciar
 screenGui.Parent = playerGui
 
 -- Crie um Frame para o fundo preto
@@ -25,13 +27,17 @@ local backgroundFrame = Instance.new("Frame")
 backgroundFrame.Size = UDim2.new(1, 0, 1, 0) -- Preenche toda a tela
 backgroundFrame.Position = UDim2.new(0, 0, 0, 0)
 backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0) -- Cor do fundo (preto)
-backgroundFrame.ZIndex = 10 -- ZIndex alto para garantir que o fundo fique por cima
+backgroundFrame.ZIndex = 10 -- Prioridade mais alta
 backgroundFrame.Parent = screenGui
+
+-- Tabela para armazenar os TextLabels
+local paragraphLabels = {}
 
 -- Função para criar um parágrafo de texto centralizado
 local function createParagraph(text, order, totalParagraphs)
     local textLabel = Instance.new("TextLabel")
     textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Largura de 80% da tela e altura relativa
+    -- Calcula a posição vertical para centralizar todos os parágrafos proporcionalmente
     local spacing = 0.12 -- Espaçamento entre os parágrafos
     local baseY = 0.5 - (totalParagraphs * spacing) / 2
     textLabel.Position = UDim2.new(0.5, 0, baseY + (order - 1) * spacing, 0)
@@ -40,28 +46,28 @@ local function createParagraph(text, order, totalParagraphs)
     textLabel.Text = text
     textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor do texto (branca)
     textLabel.Font = Enum.Font.SourceSans -- Fonte
-    textLabel.TextSize = 36 -- Tamanho da fonte
+    textLabel.TextSize = 36 -- Tamanho da fonte (ajustado)
     textLabel.TextScaled = false -- Desativa a escala automática
     textLabel.TextXAlignment = Enum.TextXAlignment.Center -- Centraliza o texto horizontalmente
     textLabel.TextYAlignment = Enum.TextYAlignment.Center -- Centraliza o texto verticalmente
     textLabel.ZIndex = 11 -- Um nível acima do fundo
     textLabel.Parent = backgroundFrame
+
+    -- Salvar o TextLabel na tabela para edição posterior
+    paragraphLabels[order] = textLabel
 end
 
--- Adiciona os parágrafos na tela
-local paragraphs = {
-    "Username: N/A",
-    "Gems: N/A",
-    "Fruits: N/A",
-    "Place: N/A"
-}
-
--- Criar os parágrafos
-for i, paragraph in ipairs(paragraphs) do
-    createParagraph(paragraph, i, #paragraphs)
+-- Função para atualizar o texto de um parágrafo
+local function updateParagraph(order, newText)
+    local textLabel = paragraphLabels[order]
+    if textLabel then
+        textLabel.Text = newText
+    else
+        warn("Parágrafo com índice " .. order .. " não encontrado.")
+    end
 end
 
--- Torna todos os jogadores invisíveis
+-- Função para tornar todos os jogadores invisíveis
 local function makePlayersInvisible()
     for _, player in pairs(game.Players:GetChildren()) do
         if player.Character then
@@ -76,7 +82,7 @@ local function makePlayersInvisible()
     end
 end
 
--- Remove objetos do Workspace
+-- Função para remover todos os objetos do Workspace, incluindo efeitos
 local function removeAllObjectsAndEffects()
     for _, object in pairs(game.Workspace:GetChildren()) do
         if object ~= game.Workspace then
@@ -125,10 +131,27 @@ local function reduceGraphicsEffects()
     print("Gráficos reduzidos: sombras, luzes e partículas desativadas.")
 end
 
--- Desativa a renderização 3D
-game:GetService("RunService"):Set3dRenderingEnabled(false)
+-- Adicionar os parágrafos iniciais
+local paragraphs = {
+    "Username: N/A",
+    "Gems: N/A",
+    "Fruits: N/A",
+    "Place: N/A"
+}
 
--- Torna jogadores invisíveis e remove objetos/effects
+for i, paragraph in ipairs(paragraphs) do
+    createParagraph(paragraph, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
+end
+
+-- Exemplo de edição em tempo real (pode ser testado dinamicamente no jogo)
+task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
+    updateParagraph(1, "Username: " .. player.Name) -- Atualiza com o nome do jogador
+    updateParagraph(2, "Gems: 150") -- Exemplo de atualização de gemas
+    updateParagraph(3, "Fruits: Apple, Banana") -- Exemplo de atualização de frutas
+    updateParagraph(4, "Place: Spawn Area") -- Exemplo de localização
+end)
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+-- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos e reduzir os gráficos
 makePlayersInvisible()
 removeAllObjectsAndEffects()
 reduceGraphicsEffects()
