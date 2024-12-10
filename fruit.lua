@@ -137,7 +137,7 @@ task.spawn(function()
                 game:GetService("ReplicatedStorage").Replicator:InvokeServer(unpack(args))
             end
 
-            if D_GEMS > 49 then
+            if game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value > 49 then
                 local theSlot = game:GetService("Players").LocalPlayer.MAIN_DATA.Slot.Value
             
                 spinFruit(theSlot)
