@@ -1,4 +1,4 @@
-break;
+
 -- Carregar o módulo
 local FullScreenUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/HOHOHUB7/VPS/refs/heads/main/fruit-gui"))()
 
@@ -13,8 +13,19 @@ FullScreenUI.createParagraph("Place: N/A", 4, 4)
 FullScreenUI.createParagraph("Action: N/A", 5, 4)
 
 local Heartbeat = game:GetService("RunService").Heartbeat
+local gameId = game.PlaceId
 
 task.spawn(function()
+    local place =  "N/A"
+        
+    if gameId == 12375113481 then 
+        place = "AFK ARENA"
+    end
+
+    if gameId == 9224601490 then 
+        place = "MAIN SPINER"
+    end
+        
     while true do
         Heartbeat:Wait()
 
