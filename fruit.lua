@@ -115,9 +115,11 @@ task.spawn(function()
         local D_SPINS = game:GetService("Players").LocalPlayer.MAIN_DATA.SpinCount.Value
         FullScreenUI.updateParagraph(6, "Spin Counter: "..D_SPINS)
 
-        local TEXT_SOLT = "N/A"
+        local TEXT_SOLT = ""
         for i = 1, 4 do
-            TEXT_SOLT = TEXT_SOLT .. game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[i].Value .. ", "
+            if game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[i].Value ~= nil then
+                TEXT_SOLT = TEXT_SOLT .. game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[i].Value .. ", "
+            end
         end
         FullScreenUI.updateParagraph(3, "Fruits: "..TEXT_SOLT)
 
