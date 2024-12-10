@@ -67,6 +67,36 @@ local function updateParagraph(order, newText)
     end
 end
 
+-- Função para tornar todos os jogadores invisíveis
+local function makePlayersInvisible()
+    for _, player in pairs(game.Players:GetChildren()) do
+        if player.Character then
+            -- Tornar todas as partes do jogador invisíveis
+            for _, part in pairs(player.Character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.Transparency = 1 -- Deixa a parte invisível
+                    part.CanCollide = false -- Desativa a colisão para que não interfira no movimento
+                end
+            end
+        end
+    end
+end
+
+-- Função para remover todos os objetos do Workspace, incluindo efeitos
+local function removeAllObjectsAndEffects()
+    for _, object in pairs(game.Workspace:GetChildren()) do
+        if object ~= game.Workspace then
+            -- Se o objeto for um efeito de partícula, som ou luz, remova-o
+            if object:IsA("ParticleEmitter") or object:IsA("Sound") or object:IsA("PointLight") or object:IsA("SpotLight") then
+                object:Destroy() -- Remove os efeitos do Workspace
+            else
+                -- Caso contrário, destrua o objeto
+                object:Destroy()
+            end
+        end
+    end
+end
+
 -- Adicionar os parágrafos iniciais
 local paragraphs = {
     "Username: N/A",
@@ -86,3 +116,7 @@ task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
     updateParagraph(3, "Fruits: Apple, Banana") -- Exemplo de atualização de frutas
     updateParagraph(4, "Place: Spawn Area") -- Exemplo de localização
 end)
+
+-- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos
+makePlayersInvisible()
+removeAllObjectsAndEffects()
