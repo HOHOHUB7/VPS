@@ -133,9 +133,7 @@ end
 
 -- Desativa a renderização 3D
 game:GetService("RunService"):Set3dRenderingEnabled(false)
-makePlayersInvisible()
-removeAllObjectsAndEffects()
-reduceGraphicsEffects()
+
 -- Criar a tela preta
 if not screenGui.Parent then
     screenGui.Parent = playerGui
@@ -152,4 +150,6 @@ if not screenGui.Parent then
 end
 
 -- Torna jogadores invisíveis e remove objetos/effects
-
+makePlayersInvisible()
+removeAllObjectsAndEffects()
+reduceGraphicsEffects()
