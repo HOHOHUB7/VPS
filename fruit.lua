@@ -117,7 +117,7 @@ task.spawn(function()
 
         local TEXT_SOLT = "N/A"
         for i = 1, 4 do
-            TEXT_SOLT = text .. game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[i].Value .. ", "
+            TEXT_SOLT = TEXT_SOLT .. game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[i].Value .. ", "
         end
         FullScreenUI.updateParagraph(3, "Fruits: "..TEXT_SOLT)
 
