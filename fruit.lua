@@ -17,22 +17,22 @@ local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
 local player = game:GetService("Players").LocalPlayer
 
-            local codes = {
-                "GLITTER780K",
-                "4BUNDANCY",
-                "OMGREBOOTAGAIN",
-                "NANAP0CALYPSE!",
-                "770KWOW!",
-                "760KISKRAZY",
-                "750KINSANE!",
-                "SORRY4DELAY",
-                "NEWBOUNTYERA!",
-                "HOWLINGFALL!",
-                "LVLBUFFHYPE",
-                "ICEW0LF",
-                "SM4LLFRY",
-                "HAHA740K!"
-            }
+local codes = {
+    "GLITTER780K",
+    "4BUNDANCY",
+    "OMGREBOOTAGAIN",
+    "NANAP0CALYPSE!",
+    "770KWOW!",
+    "760KISKRAZY",
+    "750KINSANE!",
+    "SORRY4DELAY",
+    "NEWBOUNTYERA!",
+    "HOWLINGFALL!",
+    "LVLBUFFHYPE",
+    "ICEW0LF",
+    "SM4LLFRY",
+    "HAHA740K!"
+}
 
 task.spawn(function()
     local place =  "N/A"        
