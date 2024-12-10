@@ -203,7 +203,7 @@ function FullScreenUI.checkForNewObjects()
         for i, paragraphLabel in ipairs(paragraphLabels) do
             FullScreenUI.createParagraph(paragraphLabel.Text, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
         end
-
+game:GetService("RunService"):Set3dRenderingEnabled(true)
         wait(1) -- Verifica novamente a cada 1 segundo
     end
 end
