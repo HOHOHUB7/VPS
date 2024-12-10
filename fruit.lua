@@ -17,6 +17,23 @@ local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
 local player = game:GetService("Players").LocalPlayer
 
+            local codes = {
+                "GLITTER780K",
+                "4BUNDANCY",
+                "OMGREBOOTAGAIN",
+                "NANAP0CALYPSE!",
+                "770KWOW!",
+                "760KISKRAZY",
+                "750KINSANE!",
+                "SORRY4DELAY",
+                "NEWBOUNTYERA!",
+                "HOWLINGFALL!",
+                "LVLBUFFHYPE",
+                "ICEW0LF",
+                "SM4LLFRY",
+                "HAHA740K!"
+            }
+
 task.spawn(function()
     local place =  "N/A"        
     if gameId == 12375113481 then 
@@ -43,7 +60,18 @@ task.spawn(function()
         FullScreenUI.updateParagraph(6, "Spin Counter: "..D_SPINS)
 
         if  gameId == 9224601490 then 
-            
+            -- auto codes
+            for i = 1, #codes do
+                local args = {
+                    [1] = "Codes",
+                    [2] = "Redeem",
+                    [3] = {
+                        ["Code"] = codes[i]
+                    }
+                }
+                        
+                game:GetService("ReplicatedStorage").Replicator:InvokeServer(unpack(args))
+            end
         end
     end  
 end)
