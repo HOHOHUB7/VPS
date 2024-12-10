@@ -12,10 +12,10 @@ FullScreenUI.createParagraph("Place: N/A", 4, 4)
 
 -- Atualizar parágrafos depois de algum tempo
 task.delay(5, function()
-    FullScreenUI.updateParagraph(1, "Username: PlayerName")
-    FullScreenUI.updateParagraph(2, "Gems: 150")
-    FullScreenUI.updateParagraph(3, "Fruits: Apple, Banana")
-    FullScreenUI.updateParagraph(4, "Place: Spawn Area")
+    FullScreenUI.updateParagraph(1, "Username: teste")
+    FullScreenUI.updateParagraph(2, "Gems: teste")
+    FullScreenUI.updateParagraph(3, "Fruits: teste")
+    FullScreenUI.updateParagraph(4, "Place: teste")
 end)
 
 -- Quando desejar desativar
