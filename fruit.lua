@@ -16,6 +16,7 @@ FullScreenUI.createParagraph("Spin Counter: N/A", 6, 4)
 local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
 local player = game:GetService("Players").LocalPlayer
+local TeleportService = game:GetService("TeleportService")
 
 local codes = {
     "830KBRO!",
@@ -138,6 +139,11 @@ task.spawn(function()
                 local theSlot = game:GetService("Players").LocalPlayer.MAIN_DATA.Slot.Value
             
                 spinFruit(theSlot)
+            else
+                local destinationPlaceId = 12375113481
+                local player = Players.LocalPlayer
+
+                TeleportService:Teleport(destinationPlaceId, player)
             end
 
         end
