@@ -25,15 +25,19 @@ backgroundFrame.Parent = screenGui
 local paragraphLabels = {}
 
 -- Função para criar texto centralizado
-local function createParagraph(text, order)
+local function createParagraph(text, order, totalParagraphs)
     local textLabel = Instance.new("TextLabel")
     textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Tamanho relativo
-    textLabel.Position = UDim2.new(0.1, 0, 0.35 + (order * 0.12), 0) -- Centraliza e ajusta a posição
+    -- Centraliza na horizontal e distribui verticalmente
+    textLabel.Position = UDim2.new(0.1, 0, 0.5 - (totalParagraphs * 0.05) + (order * 0.12) - 0.06, 0)
+    textLabel.AnchorPoint = Vector2.new(0.5, 0.5) -- Define o centro como ponto de referência
     textLabel.BackgroundTransparency = 1 -- Sem fundo
     textLabel.Text = text
     textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor branca
     textLabel.Font = Enum.Font.SourceSans -- Fonte
     textLabel.TextScaled = true -- Escala o texto automaticamente
+    textLabel.TextXAlignment = Enum.TextXAlignment.Center -- Centraliza o texto horizontalmente
+    textLabel.TextYAlignment = Enum.TextYAlignment.Center -- Centraliza o texto verticalmente
     textLabel.ZIndex = 11 -- Um nível acima do fundo
     textLabel.Parent = backgroundFrame
 
@@ -60,10 +64,13 @@ local paragraphs = {
 }
 
 for i, paragraph in ipairs(paragraphs) do
-    createParagraph(paragraph, i) -- Ordem começa em 1
+    createParagraph(paragraph, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
 end
 
 -- Exemplo de edição em tempo real (pode ser testado dinamicamente no jogo)
 task.delay(5, function() -- Aguarda 5 segundos e atualiza o texto
-    updateParagraph(2, "Texto do segundo parágrafo foi alterado!")
+    updateParagraph(1, "Username: " .. player.Name) -- Atualiza com o nome do jogador
+    updateParagraph(2, "Gems: 150") -- Exemplo de atualização de gemas
+    updateParagraph(3, "Fruits: Apple, Banana") -- Exemplo de atualização de frutas
+    updateParagraph(4, "Place: Spawn Area") -- Exemplo de localização
 end)
