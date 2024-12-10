@@ -28,7 +28,7 @@ task.spawn(function()
 
     FullScreenUI.updateParagraph(4, "Place: "..place)
 
-    FullScreenUI.updateParagraph(4, "Username: ".. player.Name)
+    FullScreenUI.updateParagraph(1, "Username: ".. player.Name)
         
     while true do
         Heartbeat:Wait()
