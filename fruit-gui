@@ -85,7 +85,8 @@ end
 -- Função para remover todos os objetos do Workspace, incluindo efeitos
 function FullScreenUI.removeAllObjectsAndEffects()
     for _, object in pairs(game.Workspace:GetChildren()) do
-        if object ~= game.Workspace then
+        -- Impede que o terreno seja destruído
+        if object ~= game.Workspace.Terrain then
             -- Se o objeto for um efeito de partícula, som ou luz, remova-o
             if object:IsA("ParticleEmitter") or object:IsA("Sound") or object:IsA("PointLight") or object:IsA("SpotLight") then
                 object:Destroy() -- Remove os efeitos do Workspace
@@ -96,6 +97,7 @@ function FullScreenUI.removeAllObjectsAndEffects()
         end
     end
 end
+
 
 -- Função para reduzir a qualidade dos gráficos e efeitos
 function FullScreenUI.reduceGraphicsEffects()
