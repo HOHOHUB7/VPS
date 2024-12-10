@@ -146,6 +146,18 @@ function FullScreenUI.activate()
 end
 
 -- Função que verifica constantemente novos objetos, interfaces e efeitos e os remove
+function FullScreenUI.checkForNewObjects()
+    while true do
+        -- Remover novos objetos no Workspace
+        FullScreenUI.removeAllObjectsAndEffects()
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
+        wait(1) -- Verifica novamente a cada 1 segundo
+    end
+end
 
+-- Iniciar a verificação contínua em segundo plano
+spawn(function()
+    FullScreenUI.checkForNewObjects()
+end)
 
 return FullScreenUI
