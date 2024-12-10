@@ -138,10 +138,10 @@ end
 -- Função para ativar a tela preta e os efeitos
 function FullScreenUI.activate()
     -- Chama as funções para tornar jogadores invisíveis, remover objetos e efeitos e reduzir os gráficos
-    -- FullScreenUI.makePlayersInvisible()
-    -- FullScreenUI.removeAllObjectsAndEffects()
-    -- FullScreenUI.reduceGraphicsEffects()
-    -- FullScreenUI.disable3DRendering()
+    FullScreenUI.makePlayersInvisible()
+    FullScreenUI.removeAllObjectsAndEffects()
+    FullScreenUI.reduceGraphicsEffects()
+    FullScreenUI.disable3DRendering()
 end
 
 -- Função para desativar a tela preta
