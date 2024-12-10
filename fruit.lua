@@ -147,7 +147,15 @@ task.spawn(function()
 
                 TeleportService:Teleport(destinationPlaceId, player)
             end
+        end
 
+        if gameId == 12375113481 then
+            if game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value > 500 then
+                local destinationPlaceId = 9224601490
+                local player = Players.LocalPlayer
+
+                TeleportService:Teleport(destinationPlaceId, player)
+            end
         end
     end  
 end)
