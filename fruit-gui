@@ -131,7 +131,7 @@ function FullScreenUI.reduceGraphicsEffects()
     print("Gráficos reduzidos: sombras, luzes e partículas desativadas.")
 end
 
--- Desabilitar a renderização 3D (reduz o impacto gráfico)
+-- Função para desabilitar a renderização 3D (reduz o impacto gráfico)
 function FullScreenUI.disable3DRendering()
     game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
