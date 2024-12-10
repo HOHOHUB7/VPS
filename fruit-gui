@@ -98,7 +98,6 @@ function FullScreenUI.removeAllObjectsAndEffects()
     end
 end
 
-
 -- Função para reduzir a qualidade dos gráficos e efeitos
 function FullScreenUI.reduceGraphicsEffects()
     -- Desligar sombras dinâmicas em todas as partes
@@ -173,5 +172,27 @@ function FullScreenUI.deactivate()
     -- Restaura a interface de usuário
     starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
 end
+
+-- Função que verifica constantemente novos objetos, interfaces e efeitos e os remove
+function FullScreenUI.checkForNewObjects()
+    while true do
+        -- Remover novos objetos no Workspace
+        FullScreenUI.removeAllObjectsAndEffects()
+        
+        -- Remover novas interfaces que aparecerem
+        for _, object in pairs(playerGui:GetChildren()) do
+            if object:IsA("ScreenGui") then
+                object:Destroy()
+            end
+        end
+
+        wait(1) -- Verifica novamente a cada 1 segundo
+    end
+end
+
+-- Iniciar a verificação contínua em segundo plano
+spawn(function()
+    FullScreenUI.checkForNewObjects()
+end)
 
 return FullScreenUI
