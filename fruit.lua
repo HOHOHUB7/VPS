@@ -16,8 +16,7 @@ local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
 
 task.spawn(function()
-    local place =  "N/A"
-        
+    local place =  "N/A"        
     if gameId == 12375113481 then 
         place = "AFK ARENA"
     end
@@ -25,6 +24,8 @@ task.spawn(function()
     if gameId == 9224601490 then 
         place = "MAIN SPINER"
     end
+
+    FullScreenUI.updateParagraph(4, "Place: "..place)
         
     while true do
         Heartbeat:Wait()
