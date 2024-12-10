@@ -17,6 +17,7 @@ local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
 local player = game:GetService("Players").LocalPlayer
 local TeleportService = game:GetService("TeleportService")
+local action = "N/A"
 
 local codes = {
     "830KBRO!",
@@ -124,6 +125,7 @@ task.spawn(function()
         FullScreenUI.updateParagraph(3, "Fruits: "..TEXT_SOLT)
 
         if  gameId == 9224601490 then 
+            action = "SPINS"
             -- auto codes
             for i = 1, #codes do
                 local args = {
@@ -151,11 +153,13 @@ task.spawn(function()
 
         if gameId == 12375113481 then
             if game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value > 500 then
+                
                 local destinationPlaceId = 9224601490
                 local player = Players.LocalPlayer
 
                 TeleportService:Teleport(destinationPlaceId, player)
             end
+            action = "FARM GEMS"
         end
     end  
 end)
