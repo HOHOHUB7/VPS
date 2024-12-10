@@ -2,29 +2,38 @@
 local player = game.Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- Desative as interfaces padrão do Roblox
+-- Desative todas as interfaces padrão do Roblox
 local starterGui = game:GetService("StarterGui")
-starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false) -- Desativa todas as GUIs padrão
 
--- Crie uma ScreenGui
+-- Desativa todas as interfaces padrão do Roblox (chat, lista de jogadores, etc.)
+starterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+
+-- Remova todas as ScreenGui e outros objetos de interface do PlayerGui
+for _, object in pairs(playerGui:GetChildren()) do
+    if object:IsA("ScreenGui") then
+        object:Destroy()
+    end
+end
+
+-- Crie uma ScreenGui para a tela preta
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "FullScreenUI"
 screenGui.IgnoreGuiInset = true -- Ignora o menu superior do Roblox
 screenGui.ResetOnSpawn = false -- Garante que a GUI não desapareça ao reiniciar
 screenGui.Parent = playerGui
 
--- Crie um Frame para o fundo
+-- Crie um Frame para o fundo preto
 local backgroundFrame = Instance.new("Frame")
 backgroundFrame.Size = UDim2.new(1, 0, 1, 0) -- Preenche toda a tela
 backgroundFrame.Position = UDim2.new(0, 0, 0, 0)
-backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0) -- Fundo preto
+backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0) -- Cor do fundo (preto)
 backgroundFrame.ZIndex = 10 -- Prioridade mais alta
 backgroundFrame.Parent = screenGui
 
 -- Tabela para armazenar os TextLabels
 local paragraphLabels = {}
 
--- Função para criar texto centralizado
+-- Função para criar um parágrafo de texto centralizado
 local function createParagraph(text, order, totalParagraphs)
     local textLabel = Instance.new("TextLabel")
     textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Largura de 80% da tela e altura relativa
@@ -35,10 +44,10 @@ local function createParagraph(text, order, totalParagraphs)
     textLabel.AnchorPoint = Vector2.new(0.5, 0) -- Centraliza horizontalmente
     textLabel.BackgroundTransparency = 1 -- Sem fundo
     textLabel.Text = text
-    textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor branca
+    textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor do texto (branca)
     textLabel.Font = Enum.Font.SourceSans -- Fonte
-    textLabel.TextSize = 36 -- Aumenta o tamanho do texto (ajuste conforme necessário)
-    textLabel.TextScaled = false -- Desativa a escala automática para aplicar o tamanho fixo
+    textLabel.TextSize = 36 -- Tamanho da fonte (ajustado)
+    textLabel.TextScaled = false -- Desativa a escala automática
     textLabel.TextXAlignment = Enum.TextXAlignment.Center -- Centraliza o texto horizontalmente
     textLabel.TextYAlignment = Enum.TextYAlignment.Center -- Centraliza o texto verticalmente
     textLabel.ZIndex = 11 -- Um nível acima do fundo
@@ -58,7 +67,7 @@ local function updateParagraph(order, newText)
     end
 end
 
--- Adicione os parágrafos iniciais
+-- Adicionar os parágrafos iniciais
 local paragraphs = {
     "Username: N/A",
     "Gems: N/A",
