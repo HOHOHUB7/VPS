@@ -14,6 +14,7 @@ FullScreenUI.createParagraph("Action: N/A", 5, 4)
 
 local Heartbeat = game:GetService("RunService").Heartbeat
 local gameId = game.PlaceId
+local player = game:GetService("Players").LocalPlayer
 
 task.spawn(function()
     local place =  "N/A"        
@@ -26,6 +27,8 @@ task.spawn(function()
     end
 
     FullScreenUI.updateParagraph(4, "Place: "..place)
+
+    FullScreenUI.updateParagraph(4, "Username: ".. player.Name)
         
     while true do
         Heartbeat:Wait()
