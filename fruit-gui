@@ -25,17 +25,13 @@ local backgroundFrame = Instance.new("Frame")
 backgroundFrame.Size = UDim2.new(1, 0, 1, 0) -- Preenche toda a tela
 backgroundFrame.Position = UDim2.new(0, 0, 0, 0)
 backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0) -- Cor do fundo (preto)
-backgroundFrame.ZIndex = 10
+backgroundFrame.ZIndex = 10 -- ZIndex alto para garantir que o fundo fique por cima
 backgroundFrame.Parent = screenGui
-
--- Tabela para armazenar os TextLabels
-local paragraphLabels = {}
 
 -- Função para criar um parágrafo de texto centralizado
 local function createParagraph(text, order, totalParagraphs)
     local textLabel = Instance.new("TextLabel")
     textLabel.Size = UDim2.new(0.8, 0, 0.1, 0) -- Largura de 80% da tela e altura relativa
-    -- Calcula a posição vertical para centralizar todos os parágrafos proporcionalmente
     local spacing = 0.12 -- Espaçamento entre os parágrafos
     local baseY = 0.5 - (totalParagraphs * spacing) / 2
     textLabel.Position = UDim2.new(0.5, 0, baseY + (order - 1) * spacing, 0)
@@ -50,22 +46,22 @@ local function createParagraph(text, order, totalParagraphs)
     textLabel.TextYAlignment = Enum.TextYAlignment.Center -- Centraliza o texto verticalmente
     textLabel.ZIndex = 11 -- Um nível acima do fundo
     textLabel.Parent = backgroundFrame
-
-    -- Salvar o TextLabel na tabela para edição posterior
-    paragraphLabels[order] = textLabel
 end
 
--- Função para atualizar o texto de um parágrafo
-local function updateParagraph(order, newText)
-    local textLabel = paragraphLabels[order]
-    if textLabel then
-        textLabel.Text = newText
-    else
-        warn("Parágrafo com índice " .. order .. " não encontrado.")
-    end
+-- Adiciona os parágrafos na tela
+local paragraphs = {
+    "Username: N/A",
+    "Gems: N/A",
+    "Fruits: N/A",
+    "Place: N/A"
+}
+
+-- Criar os parágrafos
+for i, paragraph in ipairs(paragraphs) do
+    createParagraph(paragraph, i, #paragraphs)
 end
 
--- Função para tornar todos os jogadores invisíveis
+-- Torna todos os jogadores invisíveis
 local function makePlayersInvisible()
     for _, player in pairs(game.Players:GetChildren()) do
         if player.Character then
@@ -80,7 +76,7 @@ local function makePlayersInvisible()
     end
 end
 
--- Função para remover todos os objetos do Workspace, incluindo efeitos
+-- Remove objetos do Workspace
 local function removeAllObjectsAndEffects()
     for _, object in pairs(game.Workspace:GetChildren()) do
         if object ~= game.Workspace then
@@ -131,21 +127,6 @@ end
 
 -- Desativa a renderização 3D
 game:GetService("RunService"):Set3dRenderingEnabled(false)
-
--- Criar a tela preta
-if not screenGui.Parent then
-    screenGui.Parent = playerGui
-    -- Adiciona os parágrafos
-    local paragraphs = {
-        "Username: N/A",
-        "Gems: N/A",
-        "Fruits: N/A",
-        "Place: N/A"
-    }
-    for i, paragraph in ipairs(paragraphs) do
-        createParagraph(paragraph, i, #paragraphs) -- Passa o total de parágrafos para centralizar melhor
-    end
-end
 
 -- Torna jogadores invisíveis e remove objetos/effects
 makePlayersInvisible()
