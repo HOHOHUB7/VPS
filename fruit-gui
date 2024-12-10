@@ -37,7 +37,8 @@ local function createParagraph(text, order, totalParagraphs)
     textLabel.Text = text
     textLabel.TextColor3 = Color3.new(1, 1, 1) -- Cor branca
     textLabel.Font = Enum.Font.SourceSans -- Fonte
-    textLabel.TextScaled = true -- Escala o texto automaticamente
+    textLabel.TextSize = 36 -- Aumenta o tamanho do texto (ajuste conforme necessário)
+    textLabel.TextScaled = false -- Desativa a escala automática para aplicar o tamanho fixo
     textLabel.TextXAlignment = Enum.TextXAlignment.Center -- Centraliza o texto horizontalmente
     textLabel.TextYAlignment = Enum.TextYAlignment.Center -- Centraliza o texto verticalmente
     textLabel.ZIndex = 11 -- Um nível acima do fundo
