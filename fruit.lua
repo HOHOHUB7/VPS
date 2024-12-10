@@ -1,3 +1,4 @@
+break;
 -- Carregar o módulo
 local FullScreenUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/HOHOHUB7/VPS/refs/heads/main/fruit-gui"))()
 
@@ -13,16 +14,12 @@ FullScreenUI.createParagraph("Action: N/A", 5, 4)
 
 local Heartbeat = game:GetService("RunService").Heartbeat
 
-while true do
-    Heartbeat:Wait()
-    local D_GEMS = game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value
-    FullScreenUI.updateParagraph(2, "Gems: "..D_GEMS)
-end
+task.spawn(function()
+    while true do
+        Heartbeat:Wait()
 
--- Atualizar parágrafos depois de algum tempo
-task.delay(5, function()
-    FullScreenUI.updateParagraph(1, "Username: teste")
-    FullScreenUI.updateParagraph(2, "Gems: teste")
-    FullScreenUI.updateParagraph(3, "Fruits: teste")
-    FullScreenUI.updateParagraph(4, "Place: teste")
+        -- GEMS UPDATE
+        local D_GEMS = game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value
+        FullScreenUI.updateParagraph(2, "Gems: "..D_GEMS)
+    end  
 end)
