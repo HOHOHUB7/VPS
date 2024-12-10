@@ -1,5 +1,5 @@
 -- Carregar o módulo
-local FullScreenUI = loadstring(game:HttpGet("url_do_seu_script/FullScreenUI.lua"))()
+local FullScreenUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/HOHOHUB7/VPS/refs/heads/main/fruit-gui"))()
 
 -- Ativar a tela preta com todos os efeitos
 FullScreenUI.activate()
