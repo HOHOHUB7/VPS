@@ -15,7 +15,8 @@ local Heartbeat = game:GetService("RunService").Heartbeat
 
 while true do
     Heartbeat:Wait()
-    
+    local D_GEMS = game:GetService("Players").LocalPlayer.MAIN_DATA.Gems.Value
+    FullScreenUI.updateParagraph(2, "Gems: "..D_GEMS)
 end
 
 -- Atualizar parágrafos depois de algum tempo
