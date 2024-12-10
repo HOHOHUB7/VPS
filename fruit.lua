@@ -55,6 +55,12 @@ task.spawn(function()
         local D_SPINS = game:GetService("Players").LocalPlayer.MAIN_DATA.SpinCount.Value
         FullScreenUI.updateParagraph(6, "Spin Counter: "..D_SPINS)
 
+        local TEXT_SOLT = "N/A"
+        for i = 1, 4 do
+            TEXT_SOLT = text .. game:GetService("Players").LocalPlayer.MAIN_DATA.Slots[i].Value .. ", "
+        end
+        FullScreenUI.updateParagraph(3, "Fruits: "..TEXT_SOLT)
+
         if  gameId == 9224601490 then 
             -- auto codes
             for i = 1, #codes do
@@ -68,6 +74,8 @@ task.spawn(function()
                         
                 game:GetService("ReplicatedStorage").Replicator:InvokeServer(unpack(args))
             end
+
+            
         end
     end  
 end)
